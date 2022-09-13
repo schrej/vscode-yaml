@@ -39,7 +39,7 @@ export interface ExtensionAPI {
   registerContributor(
     schema: string,
     requestSchema: (resource: string) => string,
-    requestSchemaContent: (uri: string) => string,
+    requestSchemaContent: (uri: string) => Promise<string> | string,
     label?: string
   ): boolean;
   modifySchemaContent(schemaModifications: SchemaAdditions | SchemaDeletions): Promise<void>;
